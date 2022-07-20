@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState,useEffect, useRef } from 'react';
+import Mobille from './Components/Mobille';
+import Desktop from './Components/Desktop';
 import './App.css';
 
+
+interface IDisplayState {
+    id: number[]
+}
+
 function App() {
+  const [display ] = useState<IDisplayState["id"]>([1,2,3])
+  const[active, setActive]  = useState<number>(1)
+  const[mobile, setMobile] = useState<boolean>(false)
+
+
+
+
+       const checkMobile = () =>{
+       if(window.innerWidth <= 960){
+
+        setMobile(true);
+     }else{
+      setMobile(false);
+     }
+       }
+
+       useEffect(()=>{
+        checkMobile()
+
+       },[])
+
+  
+ window.addEventListener('resize', checkMobile);
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    {
+      mobile === true ? <Mobille display={display} /> : <Desktop display={display} />
+    }
+
+  
     </div>
   );
 }
 
 export default App;
+
