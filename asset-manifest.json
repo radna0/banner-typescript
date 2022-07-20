@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/banner-typescript/static/css/main.981ea3d0.css",
+    "main.js": "/banner-typescript/static/js/main.8da7c1db.js",
+    "index.html": "/banner-typescript/index.html",
+    "main.981ea3d0.css.map": "/banner-typescript/static/css/main.981ea3d0.css.map",
+    "main.8da7c1db.js.map": "/banner-typescript/static/js/main.8da7c1db.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.981ea3d0.css",
+    "static/js/main.8da7c1db.js"
+  ]
+}
